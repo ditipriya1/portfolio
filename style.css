@@ -1,0 +1,738 @@
+/* =============================================
+   DITIPRIYA CHAKRABORTY — PORTFOLIO STYLESHEET
+   Clean, editorial, minimal aesthetic.
+   Color palette: Ivory + Warm Stone + Terracotta
+   ============================================= */
+
+/* ---- 1. CSS VARIABLES (easy to change colors/fonts) ---- */
+:root {
+  --bg:         #FAF8F5;       /* main background: warm ivory */
+  --bg-alt:     #F2EFE9;       /* alternating sections: slightly darker ivory */
+  --surface:    #FFFFFF;       /* card backgrounds */
+  --accent:     #C4714E;       /* terracotta accent */
+  --accent-light: #EDD9CE;     /* soft accent for tags/fills */
+  --text:       #2C2825;       /* main text: dark warm brown */
+  --text-muted: #8A8178;       /* muted / secondary text */
+  --border:     #E2DDD7;       /* dividers and borders */
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;  /* headings */
+  --font-body:    'DM Sans', sans-serif;                 /* body text */
+
+  --max-width: 1080px;    /* max page width */
+  --section-pad: 5rem;    /* vertical spacing for sections */
+}
+
+/* ---- 2. RESET & BASE STYLES ---- */
+/* Remove default browser spacing and set box model */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;  /* smooth scrolling when clicking nav links */
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;  /* smoother text on Mac/iOS */
+}
+
+/* Remove bullet points from all lists used in nav */
+ul { list-style: none; }
+
+/* Remove underlines from all links */
+a { text-decoration: none; color: inherit; }
+
+/* Images never overflow their container */
+img { max-width: 100%; display: block; }
+
+/* ---- 3. REUSABLE LAYOUT HELPERS ---- */
+/* .container: centers content and limits width */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* .section: standard vertical padding for every section */
+.section {
+  padding: var(--section-pad) 0;
+}
+
+/* .section-alt: slightly different background for alternating sections */
+.section-alt {
+  background-color: var(--bg-alt);
+}
+
+/* Section header: the number + title label at top of each section */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* ---- 4. BUTTONS ---- */
+/* Primary button: solid accent color */
+.btn-primary {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  background-color: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent);
+  transform: translateY(-2px);  /* subtle lift on hover */
+}
+
+/* Secondary button: outlined style */
+.btn-secondary {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ---- 5. NAVIGATION ---- */
+#navbar {
+  position: fixed;          /* stays at the top while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(8px);   /* frosted glass effect */
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Class added by JavaScript when user scrolls down */
+#navbar.scrolled {
+  border-color: var(--border);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo initials */
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+/* Desktop navigation links */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+/* Underline animation on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger button (hidden on desktop, shown on mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--text);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animate hamburger into an X when menu is open */
+.hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* Mobile dropdown menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 0.75rem 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.mobile-menu li a:hover {
+  color: var(--accent);
+}
+
+/* ---- 6. HERO SECTION ---- */
+#hero {
+  min-height: 100vh;        /* full viewport height */
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 640px;
+}
+
+/* Small label above name */
+.hero-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  /* Fade-in animation (defined at bottom) */
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+/* Large name heading */
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);  /* clamp = responsive font size */
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+/* Italic part of name */
+.hero-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Job title under name */
+.hero-title {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.3s;
+}
+
+/* Tagline text */
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.4s;
+}
+
+/* Hero CTA button inherits .btn-primary */
+#hero .btn-primary {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.5s;
+}
+
+/* Decorative vertical line on the right edge of the hero */
+.hero-line {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border), transparent);
+}
+
+/* ---- 7. ABOUT SECTION ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* two equal columns */
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text p {
+  margin-bottom: 1.2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Quick-facts card */
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+
+.about-card-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-card-item:last-child {
+  border-bottom: none;
+}
+
+.card-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.card-value {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* ---- 8. SKILLS SECTION ---- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  gap: 2rem;
+}
+
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Lift card on hover */
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+}
+
+/* Decorative icon symbol above category name */
+.skill-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.skill-category {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.skill-list li {
+  list-style: none;
+}
+
+.skill-name {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+/* Tiny note like "(basic)" or "(learning)" */
+.skill-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Progress bar track */
+.skill-bar {
+  height: 3px;
+  background-color: var(--border);
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Progress bar fill — width is set via JavaScript animation */
+.skill-fill {
+  height: 100%;
+  background-color: var(--accent);
+  width: 0%;   /* starts at 0, animated to actual width by JS */
+  border-radius: 2px;
+  transition: width 1.2s ease;
+}
+
+/* ---- 9. PROJECTS SECTION ---- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+}
+
+/* Small "Project 01" label */
+.project-num {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex-grow: 1;  /* pushes button to the bottom */
+}
+
+/* Tags row */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.75rem;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 2px;
+}
+
+/* ---- 10. EDUCATION SECTION ---- */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 680px;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+/* Vertical line connecting timeline dots */
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+
+.edu-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.edu-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Circle dot on the timeline */
+.edu-dot {
+  position: absolute;
+  left: -2.5rem;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--bg-alt);
+}
+
+/* Upcoming item gets a filled accent dot */
+.edu-upcoming .edu-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.edu-year {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.edu-degree {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.edu-major {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.edu-sep {
+  color: var(--text-muted);
+  margin: 0 0.3rem;
+}
+
+.edu-note {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* ---- 11. CONTACT SECTION ---- */
+.contact-wrapper {
+  max-width: 560px;
+}
+
+.contact-intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.contact-item:hover {
+  color: var(--accent);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact-item:hover .contact-icon {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ---- 12. FOOTER ---- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ---- 13. ANIMATIONS ---- */
+/* Fade + slide up animation used in the hero section */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- 14. RESPONSIVE DESIGN (mobile / tablet) ---- */
+
+/* Tablet: 2 columns instead of 3 */
+@media (max-width: 900px) {
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile: single column layout */
+@media (max-width: 600px) {
+  :root {
+    --section-pad: 3.5rem;
+  }
+
+  /* Show hamburger, hide desktop nav */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
