@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ditipriya Chakraborty — Portfolio</title>
+
+  <!-- Google Fonts: Cormorant Garamond (headings) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Link to our stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <!-- Logo / name initials -->
+      <a href="#hero" class="nav-logo">DC</a>
+
+      <!-- Navigation links -->
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger button (shows on mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#education" class="mobile-link">Education</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <!-- First thing visitors see. Sets the tone immediately. -->
+  <section id="hero">
+    <div class="hero-content">
+      <!-- Decorative label above name -->
+      <p class="hero-label">Portfolio — Kolkata, India</p>
+
+      <!-- Main name heading -->
+      <h1 class="hero-name">Ditipriya<br /><em>Chakraborty</em></h1>
+
+      <!-- Job title / role -->
+      <p class="hero-title">Aspiring HR &amp; Marketing Professional</p>
+
+      <!-- Short tagline -->
+      <p class="hero-tagline">
+        A data-driven mindset with a genuine interest in people &amp; business strategy.
+      </p>
+
+      <!-- CTA button -->
+      <a href="#projects" class="btn-primary">View My Work</a>
+    </div>
+
+    <!-- Decorative vertical line on right side (visible on desktop) -->
+    <div class="hero-line" aria-hidden="true"></div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="section">
+    <div class="container">
+      <!-- Section header (reused pattern across sections) -->
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <!-- Two-column layout: text + accent card -->
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a recent <strong>BBA graduate in Business Analytics</strong> from Kolkata, India,
+            with a foundation built on data interpretation, business processes, and analytical thinking.
+            Now, I'm channeling that background into a deeper passion — people, culture, and strategy.
+          </p>
+          <p>
+            As an incoming MBA student majoring in <strong>HR with a Marketing minor</strong>,
+            I sit at the intersection of human insight and data. I believe that understanding
+            numbers makes you better at understanding people — and vice versa.
+          </p>
+          <p>
+            I'm driven by curiosity and a continuous learning mindset. Whether it's exploring
+            digital marketing trends, studying workforce analytics, or building dashboards,
+            I approach everything with structured thinking and an open mind.
+          </p>
+        </div>
+
+        <!-- A small accent card with quick facts -->
+        <div class="about-card">
+          <div class="about-card-item">
+            <span class="card-label">Location</span>
+            <span class="card-value">Kolkata, India</span>
+          </div>
+          <div class="about-card-item">
+            <span class="card-label">Background</span>
+            <span class="card-value">BBA — Business Analytics</span>
+          </div>
+          <div class="about-card-item">
+            <span class="card-label">Pursuing</span>
+            <span class="card-value">MBA — HR &amp; Marketing</span>
+          </div>
+          <div class="about-card-item">
+            <span class="card-label">Open To</span>
+            <span class="card-value">HR · HR Analytics · Digital Marketing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <!-- Three skill category cards -->
+      <div class="skills-grid">
+
+        <!-- Category 1: Analytics -->
+        <div class="skill-card">
+          <div class="skill-icon" aria-hidden="true">◈</div>
+          <h3 class="skill-category">Analytics</h3>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">Excel</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+            </li>
+            <li>
+              <span class="skill-name">SQL <span class="skill-note">(basic)</span></span>
+              <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
+            </li>
+            <li>
+              <span class="skill-name">Python <span class="skill-note">(basic)</span></span>
+              <div class="skill-bar"><div class="skill-fill" data-width="40%"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Category 2: HR & Business -->
+        <div class="skill-card">
+          <div class="skill-icon" aria-hidden="true">◉</div>
+          <h3 class="skill-category">HR &amp; Business</h3>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">Recruitment Basics</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="65%"></div></div>
+            </li>
+            <li>
+              <span class="skill-name">Communication</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+            </li>
+            <li>
+              <span class="skill-name">Teamwork &amp; Collaboration</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Category 3: Marketing -->
+        <div class="skill-card">
+          <div class="skill-icon" aria-hidden="true">◇</div>
+          <h3 class="skill-category">Marketing</h3>
+          <ul class="skill-list">
+            <li>
+              <span class="skill-name">Digital Marketing Fundamentals</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="55%"></div></div>
+            </li>
+            <li>
+              <span class="skill-name">Content &amp; Strategy <span class="skill-note">(learning)</span></span>
+              <div class="skill-bar"><div class="skill-fill" data-width="40%"></div></div>
+            </li>
+            <li>
+              <span class="skill-name">Market Research</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <!-- Project cards grid -->
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <!-- Project number label -->
+          <span class="project-num">Project 01</span>
+          <h3 class="project-title">Sales Dashboard in Excel</h3>
+          <p class="project-desc">
+            Built an interactive Excel dashboard to visualize monthly sales performance,
+            track KPIs, and identify revenue trends using pivot tables and conditional formatting.
+          </p>
+          <!-- Tags for technologies used -->
+          <div class="project-tags">
+            <span class="tag">Excel</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Analytics</span>
+          </div>
+          <!-- Dummy link — replace with your actual project URL later -->
+          <a href="#" class="btn-secondary">View Project →</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <span class="project-num">Project 02</span>
+          <h3 class="project-title">Marketing Campaign Analysis</h3>
+          <p class="project-desc">
+            Analyzed a digital marketing campaign dataset to evaluate ROI, audience
+            engagement rates, and channel performance using basic Python and Excel.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Digital Marketing</span>
+          </div>
+          <a href="#" class="btn-secondary">View Project →</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <span class="project-num">Project 03</span>
+          <h3 class="project-title">E-commerce Insights Project</h3>
+          <p class="project-desc">
+            Explored a sample e-commerce dataset to extract customer behavior patterns,
+            product performance insights, and purchase trend summaries using SQL and Excel.
+          </p>
+          <div class="project-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Business Analytics</span>
+          </div>
+          <a href="#" class="btn-secondary">View Project →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION SECTION ========== -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+
+      <!-- Education timeline -->
+      <div class="education-timeline">
+
+        <!-- Education item 1: Upcoming MBA -->
+        <div class="edu-item edu-upcoming">
+          <div class="edu-dot"></div>
+          <div class="edu-content">
+            <span class="edu-year">2026 — Upcoming</span>
+            <h3 class="edu-degree">Master of Business Administration</h3>
+            <p class="edu-major">HR Management <span class="edu-sep">·</span> Marketing Minor</p>
+            <p class="edu-note">Specializing in workforce analytics and brand strategy.</p>
+          </div>
+        </div>
+
+        <!-- Education item 2: Completed BBA -->
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div class="edu-content">
+            <span class="edu-year">Completed</span>
+            <h3 class="edu-degree">Bachelor of Business Administration</h3>
+            <p class="edu-major">Business Analytics</p>
+            <p class="edu-note">Foundations in data analysis, business processes, and decision-making.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Short intro message -->
+        <p class="contact-intro">
+          I'm currently open to entry-level opportunities in HR, HR Analytics,
+          and Digital Marketing. Feel free to reach out — I'd love to connect.
+        </p>
+
+        <!-- Contact links -->
+        <div class="contact-links">
+          <!-- Replace the href with your actual email -->
+          <a href="mailto:your.email@example.com" class="contact-item">
+            <span class="contact-icon" aria-hidden="true">✉</span>
+            <span>your.email@example.com</span>
+          </a>
+          <!-- Replace the href with your actual LinkedIn URL -->
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon" aria-hidden="true">in</span>
+            <span>linkedin.com/in/yourprofile</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>© 2025 Ditipriya Chakraborty · Designed &amp; built with care.</p>
+  </footer>
+
+  <!-- Link to our JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
